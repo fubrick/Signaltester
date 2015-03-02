@@ -1,0 +1,4 @@
+*.out
+*.docx
+.DS_Store
+*.pdf
