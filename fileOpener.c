@@ -17,22 +17,20 @@ int main(int argc, char const *argv[])
 	char fileName[MAXFILENAME];
 	char input[MAXBUFFERSIZE];
 	char test;
-
+	mode_t mode = S_IRUSR | S_IWUSR  | S_IRGRP | S_IROTH;
 
 	if (argc > 1)
 	{
 		strcpy(fileName, argv[1]);
 		printf("Opening file %s\n", fileName);
-		file_desc = open(fileName, O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR  | S_IRGRP | S_IROTH);
-		//printf("fides: %d\n", file_desc);
+		file_desc = open(fileName, O_RDWR | O_CREAT | O_APPEND, mode);
+		
 		if (file_desc < 0)
 		{
 			printf("Error:%d could not create file\n", file_desc);
 			exit(file_desc);
 		}
 		pauseProg("varify that file has opened");
-		ret = lseek(file_desc, 0, SEEK_CUR);
-		printf("%d\n", ret);
 
 		if (argc > 2)
 		{
