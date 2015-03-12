@@ -1,9 +1,5 @@
-#include <signal.h>
-#include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-
 
 int main(int argc, char const *argv[])
 {
@@ -21,7 +17,6 @@ int main(int argc, char const *argv[])
 
 	for (i = 0; i < numberOfZombies; ++i)
 	{
-	
 		childPid = fork();
 		if (childPid < 0) // error
 		{
@@ -43,7 +38,7 @@ int main(int argc, char const *argv[])
 		cleaned = wait(NULL);
 		printf("zombie %d cleaned up\n", cleaned);
 	}
-	printf("Varify that zombies are gone.\nPress ENTER to end.\n");
+	printf("Verify that zombies are gone.\nPress ENTER to end.\n");
 	getchar();
 	return 0;
 }

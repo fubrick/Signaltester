@@ -4,8 +4,8 @@
 default: create
 
 create:
-	gcc signaltest.c -o test.out
-	gcc buddy.c -o slap.out
+	gcc fileOpener.c -o opener.out
 
 clean:
 	$(RM) *.out
+	$(RM) *.txt
