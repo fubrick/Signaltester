@@ -13,11 +13,10 @@ void pauseProg(char const *str) {
 
 int main(int argc, char const *argv[])
 {
-    int file_desc, i, ret;
+    int file_desc, i;
     int size = 0;
     char fileName[MAXFILENAME];
     char input[MAXBUFFERSIZE];
-    char test;
     mode_t mode = S_IRUSR | S_IWUSR  | S_IRGRP | S_IROTH;
 
     if (argc > 1)
